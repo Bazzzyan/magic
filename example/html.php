@@ -2,11 +2,14 @@
 
 require_once "./../class/magic_html.php";
 
-$html=new magic_html;
+$cfg['bgcolor']="#111111";
+$cfg['text']="#999999";
 
-$test=$html->tag("b","Testing...");
-$test=$html->tag("center",$test);
+$body=html("b","Testing...");
+$body=html("center",$html);
+$body=html("body",$body,$cfg);
 
-$html->body=$test;
+$head=html("title","Test");
+$head=html("head",$head);
 
-echo $html->build();
+echo html("html",$head.$body);

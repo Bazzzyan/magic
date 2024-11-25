@@ -1,26 +1,17 @@
 <?php
 
-class magic_html
+function html($name, $content="", $a=array())
 {
-    public $head="";
-    public $title="";
-    public $body="";
-
-    function tag($name, $content="", $att=array())
+    $html="<".$name;
+    foreach ($a as $param => $value)
     {
-        $html="<".$name.">";
-        $html.=$content;
-        $html.="</".$name.">";
-        return $html;
+        $html.=" $param='$value'";
     }
-
-    function build()
+    $html.=">";
+    if($content!="")
     {
-        $html="<html>";
-        $html.="<head>";
-        $html.="</head>";
-        $html.=$this->body;
-        $html.="</html>";
-        return $html;
+        $html.=$content."</".$name.">";
     }
+    return $html;
 }
+
