@@ -19,7 +19,7 @@ $cfg['bgcolor']="#111111";
 $cfg['text']="#999999";
 
 $body=html("b","Testing...");
-$body=html("center",$html);
+$body=html("center",$body);
 $body=html("body",$body,$cfg);
 
 $head=html("title","Test");
